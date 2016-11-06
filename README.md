@@ -2,6 +2,10 @@ Pin It! For Android
 ===
 This simple app fetches all images from a given URL, then it allows the user to choose one of them and create a Pin with it.
 
+Download
+---
+A **pre-release** is available [here](https://github.com/lordscales91/pinit-android/releases/tag/0.1-beta-debug). It's only intended for testing and app review.
+
 License
 ---
 Not defined yet.
@@ -29,7 +33,7 @@ Sadly yes, and there isn't any good workaround for it. Even if I remove the valu
 
 **Can I enable Maven support and still use "Run as Android Application"(Eclipse)?**
 
-I'm afraid it's not possible. The reason is that there is some kind of interference between the Maven plugin (either m2e or m2e-android) and the Android Library Update process from the ADT tools. This issue causes the libs from referenced projects to be excluded from the dex tool. Therefore, while the APK will build, it will not be executed properly.
+I'm afraid it's not possible. The reason is that there is some kind of interference between the Maven plugin (either m2e or m2e-android) and the Android Library Update process from the ADT tools. This issue causes the libs from referenced projects to be excluded from the dex tool. Therefore, while the APK will build, it will not be executed properly. You can run the "verify" goal to produce the sama result.
 
 **Can I set up this project in Android Studio?**
 
