@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pin It</string>
+    <string name="action_settings">Configuración</string>
+    <string name="loadurl">Cargar Url</string>
+    <string name="pin">Pin</string>
+    <string name="descr_image">Imagen</string>
+    <string name="login">Login</string>
+    <string name="title_activity_create_pin">Crear Pin</string>
+    <string name="extracted_image">imagen extraida</string>
+    <string name="authorize">Autorizar</string>
+    <string name="logged_in">{name} sesión iniciada</string>
+    <string name="welcome_back">Bienvenido de nuevo {name}</string>
+    <string name="look_for_pins">Buscar pins</string>
+    <string name="pin_created">Pin creado</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="gen-libs">
+	<!-- 
+		This little magic Ant script is intended to be run from Maven's antrun plugin. However, it
+		can still be run from ant provided that you properly set it up(uncomment taskdef) and 
+		give the required parameters it should work.
+		Parameters: 
+		- input.dir the directory containing the AAR libs
+		- output.dir the directory to store the generated libprojects
+	-->
+	<!-- <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpath="CONFIGURE-ME" />  -->
+	<target name="unpack-aar">
+		<basename file="${aarlib}" property="libfolder" suffix=".aar" />
+		<unzip dest="${output.dir}/${libfolder}" src="${aarlib}">
+			<globmapper from="classes.jar" to="libs/${libfolder}.jar" />
+		</unzip>
+	</target>
+	<target name="gen-libs">
+		<foreach target="unpack-aar" param="aarlib" inheritall="true">
+			<fileset dir="${input.dir}">
+				<include name="*.aar" />
+			</fileset>
+		</foreach>
+	</target>
+</project>
