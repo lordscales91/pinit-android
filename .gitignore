@@ -25,5 +25,9 @@ project.properties
 .classpath
 .settings/
 
+# Android Studio files
+*.iml
+.idea/
+
 # Maven build directory
 /target/

@@ -20,6 +20,10 @@ Go to project properties and add the required library projects (and copy the req
 
 Everything should be working fine now. If you want to enable Maven support within Eclipse (highly recommended) just open the contextual menu and choose Configure >  Convert to Maven project.
 
+Setup for Android Studio
+---
+I have added a `gradle.build` file to make the project importable to Android Studio. To Setup first create a project in Android Studio (or use an exisiting one), then choose File > New > New module... from the menu. Finally, select import Gradle Project, click nest and select the cloned repo (I assume you know how to clone a repo if you are reading this).
+
 Questions / Troubleshooting
 ---
 
@@ -33,11 +37,7 @@ Sadly yes, and there isn't any good workaround for it. Even if I remove the valu
 
 **Can I enable Maven support and still use "Run as Android Application"(Eclipse)?**
 
-I'm afraid it's not possible. The reason is that there is some kind of interference between the Maven plugin (either m2e or m2e-android) and the Android Library Update process from the ADT tools. This issue causes the libs from referenced projects to be excluded from the dex tool. Therefore, while the APK will build, it will not be executed properly. You can run the "verify" goal to produce the sama result.
-
-**Can I set up this project in Android Studio?**
-
-Probably yes, provided it has support for Maven and blindly obeys POM's defined project layout there should no problem. However, I have not tested it personally and if I can, I will stay away from Android Studio **forever**.
+I'm afraid it's not possible. The reason is that there is some kind of interference between the Maven plugin (either m2e or m2e-android) and the Android Library Update process from the ADT tools. This issue causes the libs from referenced projects to be excluded from the dex tool. Therefore, while the APK will build, it will not be executed properly. You can run the "verify" goal to produce the same result.
 
 About
 ---

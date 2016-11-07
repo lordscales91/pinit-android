@@ -69,7 +69,7 @@ public class MainActivity extends Activity implements CallbackReceiver {
 			}
 		});
 		PDKClient.setDebugMode(true);
-		PDKClient.configureInstance(this, "4860375270619622279");
+		PDKClient.configureInstance(this, getString(R.string.app_scheme).substring(3));
 		PDKClient.getInstance().onConnect(this); // Save the access token and authorize
 		// Race condition here. At this point the token probably is not saved yet.
 		// Therefore, the silent login will apparently fail

@@ -13,6 +13,7 @@ public class PlayServicesUtils {
 	 * Utility method to update Android's security provider.
 	 * See: http://stackoverflow.com/a/36892715/3107765
 	 */
+	@SuppressWarnings("deprecation")
 	public static void updateProvider(Activity callingAct) {
 		 try {
 	            ProviderInstaller.installIfNeeded(callingAct);

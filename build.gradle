@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+android {
+    sourceSets {
+        main {
+        	// Set up old style layout
+            manifest.srcFile('AndroidManifest.xml')
+            java.srcDir('src')
+            res.srcDir('res')
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "io.github.lordscales91.pinit"
+        minSdkVersion 11
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'org.jsoup:jsoup:1.9.2'
+    compile 'io.github.lordscales91.forks:android-pdk:0.0.1-20161104.175046-1'
+    compile 'com.google.android.gms:play-services-base:9.6.1'
+    compile 'com.google.android.gms:play-services-basement:9.6.1'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    testCompile 'junit:junit:4.12'
+}
+
+repositories {
+    maven {
+        setName('l91-repo')
+        setUrl('https://dl.dropboxusercontent.com/u/21975664/maven/')
+    }
+}
