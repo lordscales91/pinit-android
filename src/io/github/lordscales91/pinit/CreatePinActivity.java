@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +32,7 @@ public class CreatePinActivity extends Activity {
 	private List<PDKBoard> boards;
 	private String imgUrl;
 	private String pinLink;
+	private static final int CREATE_BOARD = 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,15 @@ public class CreatePinActivity extends Activity {
 		imgToPin = (ImageView)findViewById(R.id.imgToPin);
 		edtPinNote = (EditText)findViewById(R.id.edtPinNote);
 		spBoards = (Spinner)findViewById(R.id.spBoards);
+		spBoards.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+				spBoards_onItemSelected(i);
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> adapterView) {}
+		});
 		btnCreatePin = (Button)findViewById(R.id.btnCreatePin);
 		btnCreatePin.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -50,19 +61,24 @@ public class CreatePinActivity extends Activity {
 	}
 
 	protected void createPin() {
-		btnCreatePin.setEnabled(false);
-		String board = boards.get(spBoards.getSelectedItemPosition()).getUid();
-		PDKClient.getInstance().createPin(edtPinNote.getText().toString(), board, imgUrl, pinLink,
-				new PDKCallback() {
-			@Override
-			public void onSuccess(PDKResponse response) {
-				createPin_Success(response);
-			}
-			@Override
-			public void onFailure(PDKException exception) {
-				onError(exception);
-			}
-		});
+		int position = spBoards.getSelectedItemPosition() - 2;
+		if(position<0) {
+			Toast.makeText(this, R.string.error_no_board, Toast.LENGTH_LONG).show();
+		} else {
+			btnCreatePin.setEnabled(false);
+			String board = boards.get(position).getUid();
+			PDKClient.getInstance().createPin(edtPinNote.getText().toString(), board, imgUrl, pinLink,
+					new PDKCallback() {
+						@Override
+						public void onSuccess(PDKResponse response) {
+							createPin_Success(response);
+						}
+						@Override
+						public void onFailure(PDKException exception) {
+							onError(exception);
+						}
+					});
+		}
 	}
 
 	protected void onError(Exception exception) {
@@ -73,6 +89,22 @@ public class CreatePinActivity extends Activity {
 	protected void createPin_Success(PDKResponse response) {
 		btnCreatePin.setEnabled(true);
 		Toast.makeText(this, R.string.pin_created, Toast.LENGTH_LONG).show();
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if(requestCode == CREATE_BOARD) {
+			if(resultCode == RESULT_OK) {
+				PDKBoard b = new PDKBoard();
+				b.setName(data.getStringExtra(LordConst.BOARD_NAME));
+				b.setUid(data.getStringExtra(LordConst.BOARD_ID));
+				boards.add(b);
+				updateSpinner();
+				// boards.size() + 2 = length of the spinner items.
+				// boards.size() + 2 - 1 = last index.
+				spBoards.setSelection(boards.size()+1);
+			}
+		}
 	}
 
 	private void fillViews() {
@@ -102,12 +134,25 @@ public class CreatePinActivity extends Activity {
 		});
 	}
 
-	protected void fillBoardsSpinner(PDKResponse response) {
-		boards = response.getBoardList();
+	private void updateSpinner() {
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
+		adapter.add(getString(R.string.select));
+		adapter.add(getString(R.string.create_board)+" ...");
 		for(PDKBoard b:boards) {
 			adapter.add(b.getName());
 		}
 		spBoards.setAdapter(adapter);
+	}
+
+	protected void fillBoardsSpinner(PDKResponse response) {
+		boards = response.getBoardList();
+		updateSpinner();
+	}
+
+	protected void spBoards_onItemSelected(int pos) {
+		if(pos==1) { // Create new board
+			Intent createBoard = new Intent(this, CreateBoardActivity.class);
+			startActivityForResult(createBoard, CREATE_BOARD);
+		}
 	}
 }

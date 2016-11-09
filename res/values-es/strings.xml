@@ -13,4 +13,10 @@
     <string name="welcome_back">Bienvenido de nuevo {name}</string>
     <string name="look_for_pins">Buscar pins</string>
     <string name="pin_created">Pin creado</string>
+    <string name="title_activity_create_board">Crear Tablero</string>
+    <string name="error_no_board">Por favor, seleccione un tablero</string>
+    <string name="select">Seleccione ...</string>
+    <string name="board_name">Nombre del tablero</string>
+    <string name="board_description">Descripción del tablero</string>
+    <string name="create_board">Crear Tablero</string>
 </resources>

@@ -28,6 +28,7 @@ project.properties
 # Android Studio files
 *.iml
 .idea/
+build/
 
 # Maven build directory
 /target/

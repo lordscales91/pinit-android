@@ -3,13 +3,13 @@ apply plugin: 'com.android.application'
 android {
     sourceSets {
         main {
-        	// Set up old style layout
+            // Set up old style layout
             manifest.srcFile('AndroidManifest.xml')
             java.srcDir('src')
             res.srcDir('res')
         }
     }
-    compileSdkVersion 23
+    compileSdkVersion 25
     buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "io.github.lordscales91.pinit"
@@ -31,12 +31,13 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'org.jsoup:jsoup:1.9.2'
     compile 'io.github.lordscales91.forks:android-pdk:0.0.1-20161104.175046-1'
-    compile 'com.google.android.gms:play-services-base:9.6.1'
-    compile 'com.google.android.gms:play-services-basement:9.6.1'
+    compile 'com.google.android.gms:play-services-base:9.8.0'
+    compile 'com.google.android.gms:play-services-basement:9.8.0'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.android.support:design:25.0.0'
     testCompile 'junit:junit:4.12'
 }
 
