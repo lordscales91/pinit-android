@@ -21,9 +21,10 @@
         android:hint="@string/board_description" />
 
     <Button
-        android:text="@string/create_board"
+        android:id="@+id/btnCreateBoard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnCreateBoard"
-        android:gravity="center" />
+        android:layout_gravity="center"
+        android:text="@string/create_board" />
+
 </LinearLayout>

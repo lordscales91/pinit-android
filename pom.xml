@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.lordscales91</groupId>
 	<artifactId>pinit</artifactId>
-	<version>0.1-beta</version>
+	<version>0.2-beta</version>
 	<name>Pin It! For Android</name>
 	<description>This simple app fetches all images from a given URL, then it allows the user to choose one of them and create a Pin with it.</description>
 	<packaging>apk</packaging>
@@ -42,7 +42,7 @@
 		<dependency>
 			<groupId>io.github.lordscales91.forks</groupId>
 			<artifactId>android-pdk</artifactId>
-			<version>0.0.1-20161104.175046-1</version>
+			<version>0.0.2-beta</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.android.gms</groupId>

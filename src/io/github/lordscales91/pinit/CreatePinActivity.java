@@ -103,6 +103,8 @@ public class CreatePinActivity extends Activity {
 				// boards.size() + 2 = length of the spinner items.
 				// boards.size() + 2 - 1 = last index.
 				spBoards.setSelection(boards.size()+1);
+			} else {
+				spBoards.setSelection(0);
 			}
 		}
 	}
