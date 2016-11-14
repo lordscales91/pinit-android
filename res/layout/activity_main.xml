@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
+            android:hint="@string/type_url"
             android:inputType="textUri" >
 
             <requestFocus />
@@ -41,6 +42,13 @@
         android:layout_gravity="center"
         android:text="@string/authorize"
         android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnLoadSD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/load_from_sd" />
 
     <GridView
         android:id="@+id/gvImages"

@@ -20,4 +20,11 @@
     <string name="board_name">Board\'s name</string>
     <string name="board_description">Board\'s description</string>
     <string name="create_board">Create Board</string>
+    <string name="type_url">Type a URL...</string>
+    <string name="authorize_first">Please, authorize the app first.</string>
+    <string name="load_from_sd">Load from SD</string>
+    <string name="upload_pin">Upload Pin</string>
+    <string name="error_url">Error loading URL!</string>
+    <string name="error_pin">Error creating pin</string>
+    <string name="error_invalid_image">Invalid or unknown image path was received</string>
 </resources>

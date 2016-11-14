@@ -19,4 +19,11 @@
     <string name="board_name">Nombre del tablero</string>
     <string name="board_description">Descripción del tablero</string>
     <string name="create_board">Crear Tablero</string>
+    <string name="type_url">Introduzca una URL ...</string>
+    <string name="authorize_first">Por favor, autorize la aplicación primero.</string>
+    <string name="load_from_sd">Cargar desde SD</string>
+    <string name="upload_pin">Subir Pin</string>
+    <string name="error_url">Error cargando la URL</string>
+    <string name="error_pin">Error creaand el pin</string>
+    <string name="error_invalid_image">Ruta inválida o desconocida recibida</string>
 </resources>

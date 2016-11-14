@@ -9,4 +9,5 @@ public class LordConst {
 	public static final String PIN_LINK = "pin.link";
 	public static final String BOARD_NAME = "board.name";
 	public static final String BOARD_ID = "board.id";
+	public static final String IMG_PATH = "img.path";
 }

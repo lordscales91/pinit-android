@@ -46,6 +46,14 @@
 
                 <data android:mimeType="text/plain" />
             </intent-filter>
+            <intent-filter android:label="@string/upload_pin">
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
             <intent-filter android:label="@string/look_for_pins">
                 <action android:name="android.intent.action.VIEW" />
 

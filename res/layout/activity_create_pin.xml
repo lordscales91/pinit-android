@@ -19,12 +19,20 @@
             android:id="@+id/imgToPin"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:contentDescription="@string/extracted_image" />
+            android:contentDescription="@string/extracted_image"
+            android:scaleType="centerInside" />
 
         <TextView
             android:id="@+id/tvUrl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtPinUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textUri" />
 
         <EditText
             android:id="@+id/edtPinNote"
