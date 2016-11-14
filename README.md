@@ -4,7 +4,7 @@ This simple app fetches all images from a given URL, then it allows the user to 
 
 Download
 ---
-A **pre-release** is available [here](https://github.com/lordscales91/pinit-android/releases/tag/0.1-beta-debug). It's only intended for testing and app review.
+A **pre-release** is available [here](https://github.com/lordscales91/pinit-android/releases/tag/0.2-beta-debug). It's only intended for testing and app review.
 
 License
 ---
