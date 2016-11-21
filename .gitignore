@@ -24,6 +24,7 @@ proguard/
 project.properties
 .classpath
 .settings/
+lint.xml
 
 # Android Studio files
 *.iml

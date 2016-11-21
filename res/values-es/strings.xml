@@ -26,4 +26,5 @@
     <string name="error_url">Error cargando la URL</string>
     <string name="error_pin">Error creaand el pin</string>
     <string name="error_invalid_image">Ruta inválida o desconocida recibida</string>
+    <string name="imgur_sideload">URL especial detectada. Imgur será usado para cargar la imagen seleccionada.</string>
 </resources>

@@ -459,7 +459,8 @@ public class FileUtils {
      *
      * @author paulburke
      */
-    public static Comparator<File> sComparator = new Comparator<File>() {
+    @SuppressLint("DefaultLocale")
+	public static Comparator<File> sComparator = new Comparator<File>() {
         @Override
         public int compare(File f1, File f2) {
             // Sort alphabetically by lower case, which is much cleaner
