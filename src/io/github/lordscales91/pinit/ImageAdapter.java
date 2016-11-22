@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.ProgressBar;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -73,6 +74,7 @@ public class ImageAdapter extends BaseAdapter {
 					public void onLoadingStarted(String imageUri, View view) {
 						holder.progressBar.setProgress(0);
 						holder.progressBar.setVisibility(View.VISIBLE);
+						holder.imageView.setScaleType(ScaleType.FIT_XY);
 					}
 
 					@Override
@@ -85,6 +87,7 @@ public class ImageAdapter extends BaseAdapter {
 					public void onLoadingComplete(String imageUri, View view,
 							Bitmap loadedImage) {
 						holder.progressBar.setVisibility(View.GONE);
+						holder.imageView.setScaleType(ScaleType.CENTER_INSIDE);
 					}
 				}, new ImageLoadingProgressListener() {
 					@Override
