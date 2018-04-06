@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pin It</string>
+    <string name="action_settings">Configuración</string>
+    <string name="loadurl">Cargar Url</string>
+    <string name="pin">Pin</string>
+    <string name="descr_image">Imagen</string>
+    <string name="login">Login</string>
+    <string name="title_activity_create_pin">Crear Pin</string>
+    <string name="extracted_image">imagen extraida</string>
+    <string name="authorize">Autorizar</string>
+    <string name="logged_in">{name} sesión iniciada</string>
+    <string name="welcome_back">Bienvenido de nuevo {name}</string>
+    <string name="look_for_pins">Buscar pins</string>
+    <string name="pin_created">Pin creado</string>
+    <string name="title_activity_create_board">Crear Tablero</string>
+    <string name="error_no_board">Por favor, seleccione un tablero</string>
+    <string name="select">Seleccione ...</string>
+    <string name="board_name">Nombre del tablero</string>
+    <string name="board_description">Descripción del tablero</string>
+    <string name="create_board">Crear Tablero</string>
+    <string name="type_url">Introduzca una URL ...</string>
+    <string name="authorize_first">Por favor, autorize la aplicación primero.</string>
+    <string name="load_from_sd">Cargar desde SD</string>
+    <string name="upload_pin">Subir Pin</string>
+    <string name="error_url">Error cargando la URL</string>
+    <string name="error_pin">Error creaand el pin</string>
+    <string name="error_invalid_image">Ruta inválida o desconocida recibida</string>
+    <string name="imgur_sideload">URL especial detectada. Imgur será usado para cargar la imagen seleccionada.</string>
+    <string name="sideload_fallback">La carga de la imagen ha fallado ¿Quieres cargar la imagen con Imgur?</string>
+    <string name="sideload_fail">La carga a través de Imgur ha fallado.</string>
+    <string name="sideload_message">Cargando con Imgur...</string>
+</resources>
